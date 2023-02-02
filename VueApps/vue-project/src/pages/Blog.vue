@@ -1,6 +1,6 @@
 <template>
   <h1>Welcome to my blog page</h1>
-  <p>This is my blog page for my SaaS app</p>
+  <p>This is my blog page for my Spice app</p>
   <div class="container">
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Email address</label>
