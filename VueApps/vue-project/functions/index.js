@@ -1,5 +1,7 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+const cors = require('cors')({origin: true});
+
 admin.initializeApp();
 
 // // Create and Deploy Your First Cloud Functions
@@ -21,36 +23,41 @@ exports.echo = functions.https.onRequest((request, response) => {
 });
 
 // Accept comment and return the same comment to the user
-exports.postcomment = functions.https.onRequest((request, response) => {
-    // 1. Receive comment data in here from user POST request
-    // 2. Connect to our Firestore database
-    const currentTime = admin.firestore.Timestamp.now();
-    request.body.timestamp = currentTime;
-
-    return admin.firestore().collection('comments').
-    add(request.body).then(()=>{
-        response.send("Saved in the database");
+exports.postcomment = functions.https.onRequest((request,
+                                                 response) => {
+    cors(request, response, () => {
+        const currentTime = admin.firestore.Timestamp.now();
+        request.body.timestamp = currentTime;
+        return admin.firestore().collection('comments').add({
+            handle: request.body.data.handle,
+            comment:request.body.data.comment, timestamp:
+            request.body.timestamp}).then(() => {
+            response.send({"data": "Saved in Database"});
+        });
     });
-
 });
+
+
 
 exports.getcomments = functions.https.onRequest((request, response) => {
-
-    // 1. Connect to our Firestore database
-    let myData = [];
-    return admin.firestore().collection('comments').orderBy('timestamp').get().then((snapshot) => {
-
-        if (snapshot.empty) {
-            console.log('No matching documents.');
-            response.send('No data in database');
-            return;
-        }
-
-        snapshot.forEach(doc => {
-            myData.push(doc.data());
+    cors(request, response, () => {
+// 1. Connect to our Firestore database
+        let myData = []
+        admin.firestore().collection('comments').orderBy("timestamp",
+            "desc").get().then((snapshot) => {
+            if (snapshot.empty) {
+                console.log('No matching documents.');
+                response.send('No data in database');
+                return;
+            }
+            snapshot.forEach(doc => {
+                myData.push(doc.data());
+            });
+// 2. Send data back to client
+            response.send({data : myData});
         });
-
-        // 2. Send data back to client
-        response.send(myData);
-    })
+    });
 });
+
+
+

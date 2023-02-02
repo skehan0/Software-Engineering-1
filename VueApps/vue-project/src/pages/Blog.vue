@@ -4,21 +4,47 @@
   <div class="container">
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1"
+      <input type="email"  v-model= "handle" class="form-control" id="exampleFormControlInput1"
              placeholder="name@example.com">
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control"  v-model="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
     <div class="mb-3 right">
-      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" @click="postComment" class="btn
+btn-primary">Post Comment</button>
     </div>
   </div>
 </template>
 
-<style scoped>
-.right{
-  text-align: right;
+<script>
+import app from '../api/firebase';
+import { getFunctions, httpsCallable } from "firebase/functions";
+export default {
+  name: "Blog",
+  data() {
+    return {
+      handle: '',
+      comment: ''
+    }
+  },
+  methods : {
+    postComment () {
+      console.log(this.handle);
+      console.log(this.comment);
+      const functions = getFunctions(app);
+      const postComment = httpsCallable(functions, 'postcomment');
+      postComment({"handle": this.handle, "comment":
+        this.comment})
+          .then((result) => {
+// Read result of the Cloud Function.
+            /** @type {any} */
+            console.log(result);
+          });
+    }
+  }
 }
-</style>
+</script>
+
+
