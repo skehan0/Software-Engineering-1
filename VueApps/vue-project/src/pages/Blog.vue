@@ -20,7 +20,7 @@ btn-primary">Post Comment</button>
 
 <script>
 import app from '../api/firebase';
-import { getFunctions, httpsCallable } from "firebase/functions";
+import { getFunctions, httpsCallable, connectFunctionsEmulator } from "firebase/functions";
 export default {
   name: "Blog",
   data() {
@@ -34,6 +34,7 @@ export default {
       console.log(this.handle);
       console.log(this.comment);
       const functions = getFunctions(app);
+      connectFunctionsEmulator(functions, "localhost", 5001);
       const postComment = httpsCallable(functions, 'postcomment');
       postComment({"handle": this.handle, "comment":
         this.comment})
