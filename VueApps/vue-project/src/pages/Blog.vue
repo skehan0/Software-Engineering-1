@@ -33,7 +33,9 @@ export default {
     postComment () {
       console.log(this.handle);
       console.log(this.comment);
+
       const functions = getFunctions(app);
+      if(window.location.hostname === 'localhost') // Check if working locally
       connectFunctionsEmulator(functions, "localhost", 5001);
       const postComment = httpsCallable(functions, 'postcomment');
       postComment({"handle": this.handle, "comment":
@@ -47,5 +49,8 @@ export default {
   }
 }
 </script>
+
+
+
 
 
