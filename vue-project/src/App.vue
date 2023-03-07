@@ -1,19 +1,26 @@
 <script setup>
 import Navigation from './components/Navigation.vue'
+import Login from './components/Login.vue'
 </script>
 
 <template>
-  <Navigation />
+  <div class="body">
+     <Navigation/>
+  <Login/>
   
   <router-view></router-view>
   
- 
+</div>
 </template>
 
 
 
 
 <style scoped>
+.body {
+background-image: url(bar.svg);
+}
+
 header {
   line-height: 1.5;
 }

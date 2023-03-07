@@ -1,15 +1,12 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Spice</a>
+    <a class="navbar-brand" href="Home">Spice</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Home">Home</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Login</a>
         </li>
@@ -39,5 +36,19 @@ export default {
 </script>
 
 <style scoped>
+
+.container-fluid {
+  height: 2;
+  font-size: 25px;
+}
+
+.navbar-brand {
+  font-size: 45px;
+  color: rgba(214, 59, 21, 0.89);
+}
+
+.d-flex {
+  height: 140px;
+}
 
 </style>
