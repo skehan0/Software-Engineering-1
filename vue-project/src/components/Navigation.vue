@@ -20,10 +20,6 @@
           <a class="nav-link" href="Blog">Blog</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
@@ -39,16 +35,17 @@ export default {
 
 .container-fluid {
   height: 2;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .navbar-brand {
-  font-size: 45px;
-  color: rgba(214, 59, 21, 0.89);
+  font-size: 40px;
+  color: rgba(196, 63, 30, 0.89);
 }
 
 .d-flex {
-  height: 140px;
+  background-color: rgb(44, 43, 43);
+  
 }
 
 </style>

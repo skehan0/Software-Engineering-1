@@ -4,8 +4,9 @@ import Login from './components/Login.vue'
 </script>
 
 <template>
-  <div class="body">
-     <Navigation/>
+  <div :style="{backgroundImage:'url(https://cdn.pixabay.com/photo/2021/12/18/06/01/wine-6878013__480.jpg)'}">
+  
+  <Navigation/>
   <Login/>
   
   <router-view></router-view>
@@ -17,9 +18,11 @@ import Login from './components/Login.vue'
 
 
 <style scoped>
-.body {
-background-image: url(bar.svg);
+div {
+  width:fit-content;
+  margin: 0%;
 }
+
 
 header {
   line-height: 1.5;
@@ -46,5 +49,6 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
+  
 }
 </style>

@@ -23,7 +23,8 @@
 </template>
 <style>
 .container{
-    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
     width: 1024px;
     height: 850px;
     
@@ -36,4 +37,3 @@
 }
 </style>
 
-bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start

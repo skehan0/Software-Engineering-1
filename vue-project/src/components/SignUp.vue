@@ -76,7 +76,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 200vh;
     
    
   }
@@ -117,7 +117,7 @@
   
   button {
     padding: 0.5rem 1rem;
-    background-color: #007bff;
+    background-color: #0076f5;
     color: #fff;
     border: none;
     border-radius: 0.25rem;
@@ -127,7 +127,7 @@
   }
   
   button:hover {
-    background-color: #0062cc;
+    background-color: #41cc00;
   }
   
   </style>
