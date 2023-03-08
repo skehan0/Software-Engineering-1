@@ -4,5 +4,7 @@ function loadPage (component) {
         `@/pages/${component}.vue`)}
 export default [
     { path: '/', component: loadPage('Home') },
-    { path: '/blog', component: loadPage('Blog') }
+    { path: '/blog', component: loadPage('Blog') },
+    { path: '/SignUp', component: loadPage('SignUp') },
+    { path: '/Login', component: loadPage('Login') }
 ]

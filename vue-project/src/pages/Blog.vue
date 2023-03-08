@@ -50,7 +50,20 @@ export default {
 }
 </script>
 
+<style>
 
+.container{
+  width: fit-content;
+}
+
+h1{
+  color: white;
+}
+
+p{
+  color: white;
+}
+</style>
 
 
 

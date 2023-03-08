@@ -1,15 +1,37 @@
 <script setup>
 
-import TheWelcome from '../components/TheWelcome.vue'
 import app from '../api/firebase';
 
 </script>
 <template>
-  
-  <main>
-    <TheWelcome/>
-   
-  </main>
+
+  <section class="section">
+    <div class="container">
+      <div class="d-sm-flex align-items-center justify-content-between">
+        <div>
+          <h1>Join The Future With <span class="text-warning"> Digital Transformation </span></h1>
+          <p class="lead my-4">
+            Digital transformation is the process of using digital technologies to create new —
+            or modify existing — business processes, culture, and customer experiences to meet changing business and
+            market requirements. This reimagining of business in the digital age is digital transformation
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
-<style scoped>
+<style>
+.container{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+    width: 1024px;
+    height: 850px;
+    
+}
+
+.section{
+  padding: 10px;
+  padding-top: 10%;
+  position: center;
+}
 </style>
