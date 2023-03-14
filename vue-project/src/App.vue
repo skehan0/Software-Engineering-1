@@ -1,25 +1,57 @@
 <script setup>
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
+import Header from './components/Header.vue'
 </script>
 
-<template>      
- <div id="app">
-  <Navigation />
-  <router-view />
-  <Footer />
-</div>
+<script>
+export default {
+    name: "App",
+    components:{
+        Navigation,
+        Footer,
+        Header
+    }
+};
+</script>
+
+<template>
+    <div id="app">
+        <div class="navbar-wrapper">
+      <Navigation class="navbar" />
+    </div>
+        <div class="header-wrapper">
+            <Header class="header"/>
+        </div>
+        <router-view />
+        <Footer class="footer" />
+    </div>
 </template>
 
-
-
-
-<style scoped>
-#app {
-  background-image: url("https://cdn.pixabay.com/photo/2021/12/18/06/01/wine-6878013__480.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100%;  
+<style>
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
+
+.navbar{
+    color: aqua;
+}
+
+.header-wrapper {
+  margin-top: 90px; /* adjust this value to add some space between the navbar and header */
+}
+
+.header {
+    color: 0;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+}
+
 </style>

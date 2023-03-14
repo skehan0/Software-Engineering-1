@@ -1,31 +1,31 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+  <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
     <a class="navbar-brand" href="http://127.0.0.1:5173">Spice</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation ">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="Home">Home</a>
+          <router-link to="/" class="nav-link" >Home</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Login">Login</a>
+          <router-link to="/Login" class="nav-link">Login</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="SignUp">Sign up</a>
+          <router-link to="/SignUp" class="nav-link">Sign up</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="About">About</a>
+          <router-link to="/About" class="nav-link">About</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Blog">Blog</a>
+          <router-link to="/Blog" class="nav-link">Blog</router-link>
         </li>
       </ul>
     </div>
   </div>
-</nav>
+  </nav>
 </template>
 
 <script>
@@ -37,18 +37,23 @@ export default {
 <style scoped>
 
 .container-fluid {
-  height: 2;
   font-size: 20px;
+  
 }
 
 .navbar-brand {
-  font-size: 40px;
+  font-size: 20px;
   color: rgba(196, 63, 30, 0.89);
 }
 
-.d-flex {
-  background-color: rgb(44, 43, 43);
-  
+.navbar-toggler {
+  color: rgb(255, 106, 0);
 }
+
+.collapse {
+  background-color: white;
+}
+
+
 
 </style>

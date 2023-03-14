@@ -6,5 +6,6 @@ export default [
     { path: '/', component: loadPage('Home') },
     { path: '/blog', component: loadPage('Blog') },
     { path: '/SignUp', component: loadPage('SignUp') },
-    { path: '/Login', component: loadPage('Login') }
+    { path: '/Login', component: loadPage('Login') },
+    { path: '/About', component: loadPage('About') }
 ]

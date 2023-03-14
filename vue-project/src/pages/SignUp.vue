@@ -19,7 +19,7 @@
             I agree to the terms and conditions
           </label>
         </div>
-        <button type="submit">Sign Up</button>
+        <button type="submit" onclick="submit()">Sign Up</button>
       </form>
     </div>
   </template>
@@ -91,7 +91,7 @@
     align-items: center;
     width: 20rem;
     padding: 2rem;
-    background-color: bl;
+    background-color: rgb(210, 24, 24);
     border-radius: 0.5rem;
   }
   
@@ -106,7 +106,7 @@
     margin-bottom: 1rem;
     border-radius: 0.25rem;
     border: none;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.125rem 0.25rem rgba(221, 19, 19, 0.1);
   }
   
   .remember-me {
@@ -121,7 +121,7 @@
     color: #fff;
     border: none;
     border-radius: 0.25rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.125rem 0.25rem rgba(216, 10, 10, 0.1);
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
   }
