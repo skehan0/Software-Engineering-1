@@ -1,7 +1,5 @@
 <script setup>
-
 import app from '../api/firebase';
-
 </script>
 <template>
     <div class="container">
@@ -19,14 +17,18 @@ import app from '../api/firebase';
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(217, 87, 12);
     position: text-center;    
-    margin: 10px;
+    margin: 8px;
     padding-left: 5px;
-    padding-top: 1px;
     position: fixed;
     width: 100%;
-    height: 20px;
-
+    left: 0;
+    right: 0;
+    margin-top: 150px;
+    
 }
 
-
+.h1 {
+  position: fixed;
+  margin-top: 0px;
+}
 </style>

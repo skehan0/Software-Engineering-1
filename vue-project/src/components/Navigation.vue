@@ -35,25 +35,18 @@ export default {
 </script>
 
 <style scoped>
-
 .container-fluid {
   font-size: 20px;
   
 }
-
 .navbar-brand {
   font-size: 20px;
   color: rgba(196, 63, 30, 0.89);
 }
-
 .navbar-toggler {
   color: rgb(255, 106, 0);
 }
-
 .collapse {
   background-color: white;
 }
-
-
-
 </style>

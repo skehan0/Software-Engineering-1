@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <h1></h1>
+    <div class="header">
+        <h1>Spice</h1>
     </div>
 </template>
 
@@ -11,6 +11,17 @@ export default {
 </script>
 
 <style>
+
+.header {
+  color: rgb(220, 61, 16);
+  margin: 8px;
+  left: 0px;
+  right: 0px;
+}
+
+.h1 {
+  color: black;
+}
 
 </style>
 

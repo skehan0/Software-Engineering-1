@@ -17,36 +17,48 @@ export default {
 
 <template>
     <div id="app">
+        <div class="header-wrapper">
+        <Header class="header"/>
+    </div>
         <div class="navbar-wrapper">
       <Navigation class="navbar" />
     </div>
-        <div class="header-wrapper">
-            <Header class="header"/>
-        </div>
-        <router-view />
+    
         <Footer class="footer" />
+        <router-view />
     </div>
+
 </template>
 
 <style>
-.navbar-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
+
+
 
 .navbar{
-    color: aqua;
+    position: fixed;
+    top: 0;
+    height: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin-top: 70px;
 }
 
 .header-wrapper {
-  margin-top: 90px; /* adjust this value to add some space between the navbar and header */
+    position: fixed;
+    top: 0;
+    height: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin-top: 0px;
 }
 
 .header {
     color: 0;
+    margin-top: 0px;
 }
 
 .footer {
