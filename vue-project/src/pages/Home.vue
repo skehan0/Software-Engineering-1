@@ -16,7 +16,7 @@ import app from '../api/firebase';
 .container{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(217, 87, 12);
-    position: text-center;    
+    position: center;
     margin: 8px;
     padding-left: 5px;
     position: fixed;

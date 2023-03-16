@@ -17,12 +17,15 @@
             Remember me
           </label>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" onclick="submit()">Login</button>
         <a class="sign-up" href="SignUp">Sign up</a>
       </form>
     </div>
   </template>
   <script>
+
+  import app from "../api/firebase"
+  import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
   export default {
     data() {
       return {
@@ -40,11 +43,22 @@
       };
     },
     methods: {
-      login() {
-        // Handle login logic here
+      submit() {
+        const auth = getAuth(app);
+        signInWithEmailAndPassword(auth, this.email, this.password).then((userCredential) => {
+        // Signed in
+          let user = userCredential.user;
+          console.log(user);
+        }).catch((error) => {
+          let errorCode = error.code;
+          let errorMessage = error.message;
+          console.log(errorCode)
+          console.log(errorMessage)
+        });
       }
     }
-  };
+  }
+
   </script>
   <style>
   .login-container {

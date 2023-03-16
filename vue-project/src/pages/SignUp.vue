@@ -25,6 +25,8 @@
   </template>
   
   <script>
+  import app from '../api/firebase'
+  import {getAuth, createUserWithEmailAndPassword} from  "firebase/auth"
   export default {
     data() {
       return {
@@ -42,31 +44,27 @@
         ]
       };
     },
-    methods: {
-    async signup() {
-      try {
-        // create new user account
-        const userCredential = await firebase.auth().createUserWithEmailPasswordAndLocation(this.email, this.password, this.location)
-        const uid = userCredential.user.uid
 
-        // store additional user information in database
-        await firebase.database().ref(`users/${uid}`).set({
-
-          email: this.email,
-          username: this.username,
-          location: this.location,
-          password: this.password,
-        })
-
-        // redirect to home page
-        this.$router.push('/')
-      } catch (error) {
-        console.error(error)
+      methods : {
+        submit(){
+          const auth = getAuth(app);
+          createUserWithEmailAndPassword(auth, this.email, this.password)
+              .then((userCredential) => {
+// Signed in
+                const user = userCredential.user;
+                console.log(user)
+// ...
+              })
+              .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode)
+                console.log(errorMessage)
+// ..
+              });
+        }
       }
     }
-  }
-}
-
 
   </script>
   

@@ -2,17 +2,11 @@
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
-</script>
 
-<script>
-export default {
-    name: "App",
-    components:{
-        Navigation,
-        Footer,
-        Header
-    }
-};
+
+
+
+
 </script>
 
 <template>
@@ -57,7 +51,7 @@ export default {
 }
 
 .header {
-    color: 0;
+    color:white;
     margin-top: 0px;
 }
 
