@@ -7,5 +7,7 @@ export default [
     { path: '/blog', component: loadPage('Blog') },
     { path: '/signup', component: loadPage('SignUp') },
     { path: '/login', component: loadPage('Login') },
-    { path: '/about', component: loadPage('About') }
+    { path: '/about', component: loadPage('About') },
+    { path: '/createMenu', component: loadPage('CreateMenu') }
+
 ]
