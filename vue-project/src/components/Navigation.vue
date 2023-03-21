@@ -38,7 +38,7 @@
           <li class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/signup">Sign Up</router-link></li>
           <li class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/login">Sign In</router-link></li>
           <li class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/about">About</router-link></li>
-          <li class="nav-item mx-0 mx-lg-1"><router-link @click="logout" class="nav-link py-3 px-0 px-lg-3 rounded" to="/">Logout</router-link></li>
+          <li class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/">Logout</router-link></li>
         </ul>
       </div>
     </div>
@@ -47,12 +47,12 @@
 
 <script>
 export default{
-  name:  "Navigation.vue"
+  name:  "Navigation"
 }
 </script>
 
 <style scoped>
-.container-fluid {
+/* .container-fluid {
   font-size: 20px;
   
 }
@@ -65,5 +65,5 @@ export default{
 }
 .collapse {
   background-color: white;
-}
+} */
 </style>

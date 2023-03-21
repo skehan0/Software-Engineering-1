@@ -4,7 +4,7 @@
     </div>
 </template>
 <style>
-
+/* 
 .header {
   color: rgb(220, 61, 16);
   margin: 8px;
@@ -14,7 +14,7 @@
 
 .h1 {
   color: black;
-}
+} */
 
 </style>
 
