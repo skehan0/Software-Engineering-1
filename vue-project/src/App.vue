@@ -2,26 +2,10 @@
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
-
-
-
-
-
 </script>
-
 <template>
-    <div id="app">
-        <div class="header-wrapper">
-        <Header class="header"/>
-    </div>
-        <div class="navbar-wrapper">
-      <Navigation class="navbar" />
-    </div>
-    
-        <Footer class="footer" />
-        <router-view />
-    </div>
-
+    <Navigation />
+    <router-view></router-view>
 </template>
 
 <style>

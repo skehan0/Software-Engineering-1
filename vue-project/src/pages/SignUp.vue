@@ -28,6 +28,7 @@
   import app from '../api/firebase'
   import {getAuth, createUserWithEmailAndPassword} from  "firebase/auth"
   export default {
+    name: "SignUp",
     data() {
       return {
         username: '',

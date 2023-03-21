@@ -12,8 +12,7 @@
       <textarea class="form-control"  v-model="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
     <div class="mb-3 right">
-      <button type="button" @click="postComment" class="btn
-btn-primary">Post Comment</button>
+      <button type="button" @click="postComment" class="btn btn-primary">Post Comment</button>
     </div>
   </div>
 </template>
@@ -51,7 +50,6 @@ export default {
 </script>
 
 <style>
-
 .container{
   width: fit-content;
 }

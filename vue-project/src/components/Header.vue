@@ -3,13 +3,6 @@
         <h1>Spice</h1>
     </div>
 </template>
-
-<script>
-export default {
-  name: "Header.vue"
-}
-</script>
-
 <style>
 
 .header {

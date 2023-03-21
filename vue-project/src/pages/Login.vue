@@ -27,6 +27,7 @@
   import app from "../api/firebase"
   import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
   export default {
+    name: "Login",
     data() {
       return {
         username: '',
