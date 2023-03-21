@@ -1,7 +1,7 @@
 <template>
-  <h1>Welcome to my blog page</h1>
-  <p>This is my blog page for my Spice app</p>
   <div class="container">
+    <h1 class="blog-title">Welcome to my blog page</h1>
+    <p class="blog-text">This is my blog page for my Spice app</p>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Email address</label>
       <input type="email"  v-model= "handle" class="form-control" id="exampleFormControlInput1"
@@ -51,23 +51,24 @@ export default {
 
 <style>
 
-h1{
-  margin-top: 50px;
-  color: cadetblue;
-  padding-left: 12px;
-  position: fixed;
+.blog-title{
+  color: black;
+  padding-top: 70px;
+  
 }
-p{
-  color: orange;
-  padding-left: 12px;
-  position: fixed;
-  margin-top: 90px;
+
+.blog-text{
+  color: black;
+  padding-top: 20px;
+  
 }
- .container{
+.form-label{
+  color:black;
+}
+/* .container{
   width: fit-content;
-  margin-top: 90px;
 }
-/*
+
 h1{
   color: white;
 }
