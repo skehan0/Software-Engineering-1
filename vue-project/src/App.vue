@@ -12,7 +12,7 @@ import Header from './components/Header.vue'
 
 
 
-.navbar{
+/* .navbar{
     position: fixed;
     top: 0;
     height: 0px;
@@ -42,6 +42,6 @@ import Header from './components/Header.vue'
 .footer {
     position: fixed;
     bottom: 0;
-}
+} */
 
 </style>
