@@ -50,10 +50,24 @@ export default {
 </script>
 
 <style>
-/* .container{
-  width: fit-content;
-}
 
+h1{
+  margin-top: 50px;
+  color: cadetblue;
+  padding-left: 12px;
+  position: fixed;
+}
+p{
+  color: orange;
+  padding-left: 12px;
+  position: fixed;
+  margin-top: 90px;
+}
+ .container{
+  width: fit-content;
+  margin-top: 90px;
+}
+/*
 h1{
   color: white;
 }

@@ -25,10 +25,10 @@
     </div>
   </nav> -->
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container">
+    <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+    <div class="container-fluid">
       <router-link class="navbar-brand" to="/">Spice</router-link>
-      <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" background-color="White">
         Menu
         <i class="fas fa-bars"></i>
       </button>
@@ -52,6 +52,10 @@ export default{
 </script>
 
 <style scoped>
+
+#navbarResponsive{
+  background-color: white;
+}
 /* .container-fluid {
   font-size: 20px;
   
