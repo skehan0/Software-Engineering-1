@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <h1 class="blog-title">Welcome to my blog page</h1>
     <p class="blog-text">This is my blog page for my Spice app</p>
     <div class="mb-3">
@@ -65,6 +65,8 @@ export default {
 .form-label{
   color:black;
 }
+
+
 /* .container{
   width: fit-content;
 }

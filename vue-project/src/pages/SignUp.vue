@@ -76,8 +76,12 @@
     align-items: center;
     justify-content: center;
     height: 200vh;
+    color:#0076f5;
+    position: relative;
+    height: auto;
+    padding-top: 50px;
     
-   
+    
   }
   
   h1 {
@@ -90,8 +94,9 @@
     align-items: center;
     width: 20rem;
     padding: 2rem;
-    background-color: rgb(210, 24, 24);
+    background-color: white;
     border-radius: 0.5rem;
+    
   }
   
   label {
@@ -117,7 +122,7 @@
   button {
     padding: 0.5rem 1rem;
     background-color: #0076f5;
-    color: #fff;
+    color: black;
     border: none;
     border-radius: 0.25rem;
     box-shadow: 0 0.125rem 0.25rem rgba(216, 10, 10, 0.1);

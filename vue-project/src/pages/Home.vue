@@ -19,11 +19,11 @@ import app from '../api/firebase';
     position: center;
     margin: 8px;
     padding-left: 5px;
-    position: fixed;
+    position: relative;
     width: 100%;
     left: 0;
     right: 0;
-    margin-top: 150px;
+    margin-top: 90px;
     
 }
 
