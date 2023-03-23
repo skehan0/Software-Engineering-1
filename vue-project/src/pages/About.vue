@@ -1,5 +1,5 @@
 <template>
-      <div class="container">
+      <div class="container-about">
         <div class="row g-4">
           <div class="col-md">
             <h2 class="text-center mb-4">Contact Info</h2>

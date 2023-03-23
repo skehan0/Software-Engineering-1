@@ -68,6 +68,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    color: black;
   }
   
   h1 {
@@ -80,7 +81,7 @@
     align-items: center;
     width: 20rem;
     padding: 2rem;
-    background-color: black;
+    background-color: white;
     border-radius: 0.5rem;
   }
   

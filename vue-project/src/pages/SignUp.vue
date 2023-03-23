@@ -76,7 +76,7 @@
     align-items: center;
     justify-content: center;
     height: 200vh;
-    color:#0076f5;
+    color:black;
     position: relative;
     height: auto;
     padding-top: 50px;
@@ -128,6 +128,7 @@
     box-shadow: 0 0.125rem 0.25rem rgba(216, 10, 10, 0.1);
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
+    color: white;
   }
   
   button:hover {
