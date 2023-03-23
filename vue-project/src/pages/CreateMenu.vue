@@ -23,8 +23,11 @@ export default {
     addInput() {
       this.inputs.push({ id: this.inputs.length + 1, value: '' });
     },
+    
     deleteInput() {
-      this.inputs.pop({ id: this.inputs.length - 1, value: '' });
+      if(this.inputs.lenth > 1){
+      this.inputs.pop({ id: this.inputs.length - 1 , value: '' });
+      }
     },
     submit() {
       const db = app.firestore();

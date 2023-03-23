@@ -79,7 +79,7 @@
     color:black;
     position: relative;
     height: auto;
-    padding-top: 50px;
+    padding-top: 60px;
     
     
   }
