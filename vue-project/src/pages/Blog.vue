@@ -17,7 +17,7 @@
       <button type="button" @click="getComments" class="btn btn-primary">Show Comments</button>
     </div>
     <!-- Checks to make sure there are actual comments to display -->
-    <div v-if="commentsArray.length > 0">
+    <div>
       <ul>
       <li v-for="comment in commentsArray">
         <div v-if="!editing">
@@ -40,9 +40,9 @@
 <script>
 import app from '../api/firebase';
 import { getFunctions, httpsCallable, connectFunctionsEmulator } from "firebase/functions";
-import {getAuth, onAuthStateChanged} from "firebase/auth";
-
+// (unused)import {getAuth, onAuthStateChanged} from "firebase/auth";
 export default {
+  name: "Blog",
   data() {
     return {
       handle: '',
@@ -53,6 +53,8 @@ export default {
       user:null
     }
   },
+  // blog disapears with this code
+  /*
   created(){
     // Check for logged in user
     const auth = getAuth(app);
@@ -69,8 +71,8 @@ export default {
       }
     });
     this.getComments();
-    //window.setInterval(this.getComments, 1000);
-  },
+    window.setInterval(this.getComments, 1000);
+  },*/
   methods : {
     postComment() {
       let loader = this.$loading.show({    // Optional parameters
@@ -80,8 +82,8 @@ export default {
       });
       const functions = getFunctions(app);
       // Uncomment this code if your local emulators are running and you wish to test locally
-      //if(window.location.hostname === 'localhost') // Checks if working locally
-        //connectFunctionsEmulator(functions, "localhost", 5001);
+      if(window.location.hostname === 'localhost') // Checks if working locally
+        connectFunctionsEmulator(functions, "localhost", 5001);
       const postComment = httpsCallable(functions, 'postusercomment');
       postComment({"handle": this.handle, "comment": this.comment}).then((result) => {
         // Read result of the Cloud Function.
@@ -98,8 +100,8 @@ export default {
       });
       const functions = getFunctions(app);
       // Uncomment this section if your local emulators are running and you wish to test locally
-      //if(window.location.hostname === 'localhost') // Checks if working locally
-      //connectFunctionsEmulator(functions, "localhost", 5001);
+      if(window.location.hostname === 'localhost') // Checks if working locally
+      connectFunctionsEmulator(functions, "localhost", 5001);
       const getComments = httpsCallable(functions, 'getcomments');
       getComments().then((result) => {
         // Read result of the Cloud Function.
@@ -112,8 +114,8 @@ export default {
     deleteComment(id){
       const functions = getFunctions(app);
       // Uncomment this section if your local emulators are running and you wish to test locally
-      //if(window.location.hostname === 'localhost') // Checks if working locally
-      //connectFunctionsEmulator(functions, "localhost", 5001);
+      if(window.location.hostname === 'localhost') // Checks if working locally
+      connectFunctionsEmulator(functions, "localhost", 5001);
       const deleteComment = httpsCallable(functions, 'deleteusercomment');
       deleteComment({id:id}).then((result) => {
         console.log(result.data);
@@ -132,8 +134,8 @@ export default {
     save(id) {
       const functions = getFunctions(app);
       // Uncomment this section if your local emulators are running and you wish to test locally
-      //if(window.location.hostname === 'localhost') // Checks if working locally
-      //connectFunctionsEmulator(functions, "localhost", 5001);
+      if(window.location.hostname === 'localhost') // Checks if working locally
+      connectFunctionsEmulator(functions, "localhost", 5001);
       const updateComment = httpsCallable(functions, 'updatecomment?id=' + id);
       // Data field automatically populated by Firebase client lib
       // JSON that will arrive at the server will be { data : {comment : "text from input"} }
@@ -147,13 +149,11 @@ export default {
 </script>
 
 <style>
-
 .blog-title{
   color: black;
   padding-top: 70px;
   
 }
-
 .blog-text{
   color: black;
   padding-top: 20px;
@@ -162,20 +162,23 @@ export default {
 .form-label{
   color:black;
 }
-
-
+h1{
+  color: black;
+  padding-top: 50px;
+  padding-left: 5px;
+}
+p{
+  color: black;
+  padding-left: 5px;
+  
+}
 /* .container{
   width: fit-content;
 }
-
 h1{
   color: white;
 }
-
 p{
   color: white;
 } */
 </style>
-
-
-

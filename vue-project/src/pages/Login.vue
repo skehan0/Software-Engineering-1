@@ -30,7 +30,7 @@
     name: "Login",
     data() {
       return {
-        username: '',
+        email: '',
         password: '',
         remember: false,
         location: '',
@@ -50,6 +50,7 @@
         // Signed in
           let user = userCredential.user;
           console.log(user);
+          this.$router.push({path: '/secure'});
         }).catch((error) => {
           let errorCode = error.code;
           let errorMessage = error.message;
@@ -69,6 +70,7 @@
     justify-content: center;
     height: 100vh;
     color: black;
+    margin-top: 80px;
   }
   
   h1 {

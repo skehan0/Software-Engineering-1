@@ -1,7 +1,7 @@
 <template>
-    <div class="signup-container">
+    <div class="register-container">
       <h1>Restaurant Sign Up</h1>
-      <form @submit.prevent="signup">
+      <form @submit.prevent="register">
         <label for="username">Username</label>
         <input type="text" v-model="username" id="username" required>
         <label for="email">Email</label>
@@ -28,7 +28,7 @@
   import app from '../api/firebase'
   import {getAuth, createUserWithEmailAndPassword} from  "firebase/auth"
   export default {
-    name: "SignUp",
+    name: "Register",
     data() {
       return {
         username: '',
@@ -46,31 +46,33 @@
       };
     },
 
-      methods : {
-        submit(){
-          const auth = getAuth(app);
-          createUserWithEmailAndPassword(auth, this.email, this.password)
-              .then((userCredential) => {
-// Signed in
-                const user = userCredential.user;
-                console.log(user)
-// ...
-              })
-              .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode)
-                console.log(errorMessage)
-// ..
-              });
-        }
-      }
+    methods: {
+    register() {
+      console.log("Email " + this.email);
+      console.log("Password" + this.password);
+      const auth = getAuth(app);
+      createUserWithEmailAndPassword(auth, this.email, this.password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log(user)
+            this.$router.push({path: '/secure'})
+            // ...
+          }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode)
+        console.log(errorMessage)
+        // ..
+      });
+    }
+  }
     }
 
   </script>
   
   <style scoped>
-  .signup-container {
+  .register-container {
     display: flex;
     flex-direction: column;
     align-items: center;
