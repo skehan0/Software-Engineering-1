@@ -20,6 +20,7 @@
           </label>
         </div>
         <button type="submit" onclick="submit()">Sign Up</button>
+        <a class="login" href="Login">Back to Login</a>
       </form>
     </div>
   </template>

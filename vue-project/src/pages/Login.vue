@@ -1,6 +1,6 @@
 <template>
-    <div class="login-container">
-      <h1>Restaurant Login</h1>
+    <div class="form-wrap">
+      <h1>Login to Spice</h1>
       <form @submit.prevent="login">
         <label for="username">Username</label>
         <input type="text" v-model="username" id="username" required>
@@ -18,22 +18,24 @@
           </label>
         </div>
         <button type="submit" onclick="submit()">Login</button>
-        <a class="sign-up" href="SignUp">Sign up</a>
+        <a class="register" href="Register">Don't have an account? Register</a>
+        <div class="angle"></div>
       </form>
+      <div class="background"></div>
     </div>
   </template>
+  
   <script>
-
   import app from "../api/firebase"
   import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
   export default {
     name: "Login",
     data() {
       return {
-        email: '',
-        password: '',
+        email: null,
+        password: null,
         remember: false,
-        location: '',
+        location: null,
         counties: [
           'Antrim', 'Armagh', 'Carlow', 'Cavan', 'Clare', 'Cork', 'Derry', 'Donegal',
           'Down', 'Dublin', 'Fermanagh', 'Galway', 'Kerry', 'Kildare', 'Kilkenny',
@@ -60,10 +62,10 @@
       }
     }
   }
-
   </script>
-  <style>
-  .login-container {
+
+  <style lang="scss">
+  .form-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,7 +73,7 @@
     height: 100vh;
     color: black;
     margin-top: 80px;
-  }
+  
   
   h1 {
     margin-bottom: 2rem;
@@ -126,5 +128,29 @@
     width: 100%;
   }
 
+  .angle {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      transform: rotateZ(3deg);
+      width: 60px;
+      right: -30px;
+      height: 101%;
+      @media (min-width: 900px) {
+        display: initial;
+      }
+    }
+  }
+    .background {
+      display: none;
+      flex: 2;
+      background-size: cover;
+      background-image: url("../assets/background.png");
+      width: 100%;
+      height: 100%;
+      @media (min-width: 900px) {
+          display: initial;
+      }
+    }
   
   </style>

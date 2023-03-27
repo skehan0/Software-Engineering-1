@@ -1,7 +1,7 @@
 <template>
-    <!-- Navigation-->
+    <header>
     <nav class="navbar navbar-expand-lg bg-white text-uppercase fixed-top" id="mainNav">
-    <div class="container-fluid">
+    <div class="container">
       <router-link class="navbar-brand" to="/">Spice</router-link>
       <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" background-color="White">
         Menu
@@ -18,32 +18,24 @@
       </div>
     </div>
   </nav>
+</header>
 </template>
 
 <script>
-export default{
-  name:  "Navigation"
-}
+export default {
+  name:  "Navigation",
+  
+};
 </script>
 
 <style scoped>
 
-#navbarResponsive{
+header{
   background-color: white;
 }
- .container-fluid {
-  background-color: white;
-  
-}
-/*
-.navbar-brand {
-  font-size: 20px;
-  color: rgba(196, 63, 30, 0.89);
-}
-.navbar-toggler {
-  color: rgb(255, 106, 0);
-}
-.collapse {
-  background-color: white;
-} */
+ 
+
 </style>
+
+
+

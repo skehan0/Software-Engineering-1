@@ -2,7 +2,7 @@
 import app from '../api/firebase';
 </script>
 <template>
-    <div class="container">
+    <div class="home">
       <h1>Join The Future With <span class="text-warning"> Digital Transformation </span></h1>
           <p class="lead my-4">
             Digital transformation is the process of using digital technologies to create new —
@@ -48,8 +48,18 @@ import app from '../api/firebase';
         </div>
 </template>
 
+<script>
+export default {
+    name: "Home",
+    components: {},
+    data() {
+        
+    },
+};
+</script>
+
 <style>
-.container{
+.home{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
     position: center;
