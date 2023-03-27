@@ -19,8 +19,11 @@
             I agree to the terms and conditions
           </label>
         </div>
-        <button type="submit" onclick="submit()">Sign Up</button>
-        <a class="login" href="Login">Back to Login</a>
+        <button @click="register" class="btn btn-primary mt-2">Create Account</button>
+        <!-- <button type="submit" onclick="submit()">Sign Up</button>
+        -->
+        
+          <a class="login" href="Login">Back to Login</a>
       </form>
       <div class="background"></div>
     </div>

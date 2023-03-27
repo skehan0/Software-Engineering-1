@@ -6,9 +6,9 @@ import Footer from './components/Footer.vue'
 <template>
     <div class="app-wrapper">
         <div class="app">
-            <Navigation v-if="!naviagtion" />
+            <Navigation v-if="!navigation" />
             <router-view/>
-            <Footer v-if="!naviagtion"/>
+            <Footer v-if="!navigation"/>
         </div>
     </div>
 </template>
@@ -30,8 +30,7 @@ export default {
         checkRoute() {
       if (
         this.$route.name === "Login" || 
-        this.$route.name === "Register" || 
-        this.$route.name === "ForgotPassword"
+        this.$route.name === "Register" 
         ) {
         this.navigation = true;
         return;
