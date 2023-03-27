@@ -1,6 +1,6 @@
 <template>
-    <div class="register-container">
-      <h1>Restaurant Sign Up</h1>
+    <div class="form-wrap">
+      <h1>Register with Spice</h1>
       <form @submit.prevent="register">
         <label for="username">Username</label>
         <input type="text" v-model="username" id="username" required>
@@ -22,6 +22,7 @@
         <button type="submit" onclick="submit()">Sign Up</button>
         <a class="login" href="Login">Back to Login</a>
       </form>
+      <div class="background"></div>
     </div>
   </template>
   
@@ -73,17 +74,17 @@
   </script>
   
   <style scoped>
-  .register-container {
+  .form-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 200vh;
     color:black;
+    margin-top: 50px;
     position: relative;
     height: auto;
     padding-top: 60px;
-    
     
   }
   
@@ -137,6 +138,8 @@
   button:hover {
     background-color: #41cc00;
   }
+
+  
   
   </style>
   
