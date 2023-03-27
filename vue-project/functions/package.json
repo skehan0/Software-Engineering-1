@@ -16,8 +16,6 @@
     "@nuxtjs/vuetify": "^1.12.3",
     "@vitejs/plugin-vue": "^4.0.0",
     "vite": "^4.0.0"
-  },
-  "scripts": {
-    "test": "mocha --reporter spec"
   }
 }
+  

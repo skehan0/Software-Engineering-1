@@ -13,10 +13,11 @@
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "firebase": "^9.17.1",
+    "firebase-functions": "^4.2.1",
     "vue": "^3.2.45",
-    "vue-svg-loader": "^0.16.0",
-    "vue2-editor": "^2.10.2",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue-svg-loader": "^0.10.0",
+    "vue2-editor": "^1.0.1"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.12.3",

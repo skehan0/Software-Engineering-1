@@ -12,7 +12,7 @@ import app from '../api/firebase';
     </div>
     <div class="home-about">
             <div class="image">
-                <img src="../assets/images/about-img.jpg" alt="">
+                <img src="#" alt="">
             </div>
             <div class="content">
                 <span>why choose us?</span>
@@ -28,19 +28,19 @@ import app from '../api/firebase';
 
                 <div class="icons-container">
                     <div class="icons">
-                        <img src="../assets/images/serv-1.png" alt="">
+                        <img src="#" alt="">
                         <h3>fast technology</h3>
                     </div>
                     <div class="icons">
-                        <img src="../assets/images/serv-2.png" alt="">
+                        <img src="#" alt="">
                         <h3>fresh drinks</h3>
                     </div>
                     <div class="icons">
-                        <img src="../assets/images/serv-3.png" alt="">
+                        <img src="#" alt="">
                         <h3>digital transformation</h3>
                     </div>
                     <div class="icons">
-                        <img src="../assets/images/serv-4.png" alt="">
+                        <img src="#" alt="">
                         <h3>24/7 support</h3>
                     </div>
                 </div>

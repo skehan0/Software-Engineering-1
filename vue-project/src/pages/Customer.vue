@@ -8,40 +8,40 @@
                 <router-link @click="scrollToTop()" to="/menu" class="btn">order now</router-link>
             </div>
             <div class="image">
-                <img src="../assets/images/b.png" alt="" class="home-img">
-                <img src="../assets/images/a.png" alt="" class="home-parallax-img">
+                <img src="../assets/background.png" alt="" class="home-img">
+                <img src="../assets/background.png" alt="" class="home-parallax-img">
             </div>
         </div>
 
 
         <div class="home-category">
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/taco-img.png" alt="">
+                <img src="../assets/background.png" alt="">
                 <h3>Sult</h3>
             </router-link>
 
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/burrito-img.png" alt="">
+                <img src="../assets/background.png" alt="">
                 <h3>Back Door</h3>
             </router-link>
 
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/nachos-img.png" alt="">
+                <img src="../assets/background.png" alt="">
                 <h3>Huskers</h3>
             </router-link>
 
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/salad-img.png" alt="">
+                <img src="../assets/background.png" alt="">
                 <h3>XIX</h3>
             </router-link>
 
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/dessert-img.png" alt="">
+                <img src="../assets/background.png" alt="">
                 <h3>Zion</h3>
             </router-link>
 
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/coca-img.png" alt="">
+                <img src="../assets/background.png" alt="">
                 <h3>8</h3>
             </router-link>
         </div>
@@ -49,7 +49,7 @@
 
         <div class="home-about">
             <div class="image">
-                <img src="../assets/images/about-img.jpg" alt="">
+                <img src="../assets/background.png" alt="">
             </div>
             <div class="content">
                 <span>why choose us?</span>
@@ -61,19 +61,19 @@
 
                 <div class="icons-container">
                     <div class="icons">
-                        <img src="../assets/images/serv-1.png" alt="">
+                        <img src="../assets/background.png" alt="">
                         <h3>fast delivery</h3>
                     </div>
                     <div class="icons">
-                        <img src="../assets/images/serv-2.png" alt="">
+                        <img src="../assets/background.png" alt="">
                         <h3>fresh food</h3>
                     </div>
                     <div class="icons">
-                        <img src="../assets/images/serv-3.png" alt="">
+                        <img src="../assets/background.png" alt="">
                         <h3>best quality</h3>
                     </div>
                     <div class="icons">
-                        <img src="../assets/images/serv-4.png" alt="">
+                        <img src="../assets/background.png" alt="">
                         <h3>24/7 support</h3>
                     </div>
                 </div>
