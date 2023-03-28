@@ -1,5 +1,5 @@
 <template>
-    <header>
+  <header>
     <nav class="navbar navbar-expand-lg bg-white text-uppercase fixed-top" id="mainNav">
     <div class="container">
       <router-link class="navbar-brand" to="/">
@@ -51,8 +51,7 @@ export default
     },
     created() {
       // Check if the user is logged in
-      const auth = getAuth
-        (app);
+      const auth = getAuth(app);
       onAuthStateChanged(auth, (user) => {
         if (user) {
           console.log(user);
