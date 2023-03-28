@@ -2,47 +2,31 @@
   <footer>
     <div class="container">
       <div class="left">
-        <div class="col-1">
+        <div class="row-1">
           <router-link class="header" to="/">Spice</router-link>
-          <ul>
-            <li>
-              <a href="#"><youTube class="svg-icon"/></a>
-            </li>
-            <li>
-              <a href="#"><twitter class="svg-icon"/></a>
-            </li>
-            <li>
-              <a href="#"><instagram class="svg-icon"/></a>
-            </li>
-            <li>
-              <a href="#"><linkedin class="svg-icon"/></a>
-            </li>
-          </ul>
         </div>
-        <div class="col-2">
+        <div class="row-1">
+          <router-link class="header" to="/"><img src="../assets/LogoSpice.png" alt="Image Description" class="ml-2"></router-link>
+        </div>
+        <div class="row-2">
           <ul>
             <router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/home">Home</router-link>
             <router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/blog">Blogs</router-link>
+            <router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/about">About</router-link>
             <router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/login">Login In / Register</router-link>
           </ul>
         </div>
       </div>
-      <div class="right">
+      <div class="row-3">
         <p>Copyright 2023 All Rights Reserved</p>
       </div>
     </div>
   </footer>
 </template>
 
-
-
 <script>
-
 export default {
   name: "Footer",
-  components: {
-    
-  }
 };
 </script>
 
@@ -59,7 +43,6 @@ footer {
       flex-direction: row;
       gap: 0px;
     }
-
     > div {
       display: flex;
       flex: 1;
@@ -94,17 +77,7 @@ footer {
         display: flex;
       }
 
-      .col-1,
-      .col-2 {
-        gap: 32px;
-        display: flex;
-        flex: 1;
-        @media (min-width: 800px) {
-          gap: 0;
-        }
-      }
-
-      .col-1 {
+      .row-1 {
         flex-direction: column;
 
         h2 {
@@ -119,35 +92,12 @@ footer {
           li {
             display: flex;
             align-items: center;
-            .svg-icon {
-              width: 24px;
-              height: auto;
-              color: #fff;
-            }
-          }
-        }
-      }
-
-      .col-2 {
-        ul {
-          height: 100%;
-          justify-content: center;
-          flex-direction: row;
-          flex-wrap: wrap;
-          @media (min-width: 800px) {
-            flex-direction: column;
-          }
-          .link {
-            font-size: 16px;
-            font-weight: 500;
-            color: #fff;
-            text-decoration: none;
           }
         }
       }
     }
 
-    .right {
+    .row-3 {
       gap: 32px;
       color: #fff;
       align-items: center;
@@ -157,7 +107,6 @@ footer {
         gap: 0;
       }
     }
-
     p {
       margin-top: auto;
     }
