@@ -1,9 +1,7 @@
 <template>
-  <div class="form-wrap">
+  <!-- <div class="form-wrap">
     <h1>Register with Spice</h1>
     <form @submit.prevent="register">
-      <label for="username">Username</label>
-      <input type="text" v-model="username" id="username" required>
       <label for="email">Email</label>
       <input type="email" v-model="email" id="email" required>
       <label for="password">Password</label>
@@ -20,7 +18,32 @@
         </label>
       </div>
       <button @click="register" class="btn btn-primary mt-2">Create Account</button>
-      <a class="login" href="Login">Back to Login</a>
+      <router-link class="login" to="/login">Back to Login</router-link>
+    </form>
+    <div class="background"></div>
+  </div> -->
+  <div class="form-wrap">
+    <form class="register" @submit.prevent="register">
+      <h3>Register with Spice</h3>
+      <div class="inputs">
+        <div class="input">
+          <input type="email" placeholder="email" v-model="email" id="email" required>
+        </div>
+        <div class="input">
+          <input type="password" placeholder="password" v-model="password" id="password" required>
+        </div>
+        <div class="input">
+        <select v-model="location" id="location">
+          <option disabled value="">Please select a location</option>
+          <option v-for="county in counties" :value="county">{{ county }}</option> 
+       </select>
+    </div>
+      </div>
+      <button type="submit" @click="register">Register</button>
+      <p class="register-login">
+      <router-link class="login" to="/login">Already have an account? Login</router-link>
+      </p>
+      <div class="angle"></div>
     </form>
     <div class="background"></div>
   </div>
@@ -34,7 +57,6 @@ export default {
   name: "Register",
   data() {
     return {
-      username: "",
       email: "",
       password: "",
       agree: false,
@@ -101,94 +123,138 @@ export default {
 }
 </script>
   
-  <style scoped>
+<style lang="scss">
 .form-wrap {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: black;
-  margin: 90px auto 0;
-  text-align: center;
-  max-width: 1000px;
-}
-
-h1 {
-  margin-bottom: 2rem;
-}
-
-form {
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25rem; /* increased width */
-  padding: 2rem;
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* added box shadow */
+  height: 100vh;
+  justify-content: center;
+  align-self: center;
+  margin: 0 auto;
+  width: 90%;
 
-  /* added margin to adjust form position */
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
+  @media (min-width: 900px) {
+    width: 100%;
+  }
 
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
+  .register-login {
+    margin-bottom: 32px;
 
-input,
-select {
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 0.25rem;
-  border: none;
-  box-shadow: 0 0.125rem 0.25rem rgba(221, 19, 19, 0.1);
-}
+    .login {
+      color: #000;
+    }
+  }
 
-.remember-me {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
+  form {
+    padding: 0 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 
-button {
-  padding: 0.5rem 1rem;
-  background-color: #0076f5;
-  color: white;
-  border: none;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
+    @media (min-width: 900px) {
+      padding: 0 50px;
+    }
 
-button:hover {
-  background-color: #41cc00;
-}
+    h3 {
+      text-align: center;
+      color: #303030;
+      padding-bottom: 10px;
 
-/* added styles for the Login link */
-a.login {
-  margin-top: 1rem;
-  display: inline-block;
-  color: #0076f5;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease-in-out;
-}
+      @media (min-width: 900px) {
+        font-size: 40px;
+      }
+    }
 
-a.login:hover {
-  color: #41cc00;
-}
+    .inputs {
+      width: 100%;
+      max-width: 350px;
 
-/* added styles for the background */
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url('../assets/images/background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.5;
-  z-index: -1;
+      .input {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+
+
+        input, select {
+          width: 100%;
+          border: none;
+          background-color: #f2f7f6;
+          padding: 4px 4px 4px 30px;
+          height: 50px;
+          border-radius: 0.5rem;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .icon {
+          width: 12px;
+          position: absolute;
+          left: 6px;
+        }
+      }
+    }
+
+    .forgot-password {
+      text-decoration: none;
+      color: #000;
+      cursor: pointer;
+      font-size: 14px;
+      margin: 16px 0 32px;
+      border-bottom: 1px solid transparent;
+      transition: 0.5s ease all;
+
+      &:hover {
+        border-color: #303030;
+      }
+    }
+
+    .angle {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      transform: rotateZ(3deg);
+      width: 60px;
+      right: -30px;
+      height: 101%;
+
+      @media (min-width: 900px) {
+        display: initial;
+      }
+    }
+  }
+
+  .background {
+    display: none;
+    flex: 2;
+    background-size: cover;
+    background-image: url("../assets/background.png");
+    width: 100%;
+    height: 100%;
+
+    @media (min-width: 900px) {
+      display: initial;
+    }
+  }
+      button {
+      padding: 0.5rem 1rem;
+      background-color: black;
+      color: #fff;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #0062cc;
+      }
+    }
 }
 </style>

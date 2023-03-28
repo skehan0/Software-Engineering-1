@@ -4,16 +4,10 @@
       <h3>Login to Spice</h3>
       <div class="inputs">
         <div class="input">
-          <input type="text" placeholder="email" v-model="username" id="username" required>
+          <input type="email" placeholder="email" v-model="email" id="email" required>
         </div>
         <div class="input">
           <input type="password" placeholder="password" v-model="password" id="password" required>
-        </div>
-        <div class="input">
-          <select v-model="location" id="location">
-            <option disabled value="">Please select a location</option>
-            <option v-for="county in counties" :value="county">{{ county }}</option>
-          </select>
         </div>
       </div>
       <div class="remember-me">
@@ -22,7 +16,7 @@
           Remember me
         </label>
       </div>
-      <button type="submit">Login</button>
+      <button type="submit" @click="login">Login</button>
       <p class="login-register">
       <router-link class="register" to="/register">Don't have an account? Register</router-link>
       </p>
@@ -43,13 +37,6 @@ export default {
       password: null,
       remember: false,
       location: null,
-      counties: [
-        'Antrim', 'Armagh', 'Carlow', 'Cavan', 'Clare', 'Cork', 'Derry', 'Donegal',
-        'Down', 'Dublin', 'Fermanagh', 'Galway', 'Kerry', 'Kildare', 'Kilkenny',
-        'Laois', 'Leitrim', 'Limerick', 'Longford', 'Louth', 'Mayo', 'Meath',
-        'Monaghan', 'Offaly', 'Roscommon', 'Sligo', 'Tipperary', 'Tyrone', 'Waterford',
-        'Westmeath', 'Wexford', 'Wicklow'
-      ]
     };
   },
   methods: {
@@ -130,7 +117,7 @@ export default {
         margin-bottom: 25px;
 
 
-        input, select {
+        input {
           width: 100%;
           border: none;
           background-color: #f2f7f6;
