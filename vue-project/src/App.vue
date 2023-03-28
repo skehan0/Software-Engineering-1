@@ -1,8 +1,3 @@
-<script setup>
-import Navigation from './components/Navigation.vue'
-import Footer from './components/Footer.vue'
-</script>
-
 <template>
     <div class="app-wrapper">
         <div class="app">
@@ -14,6 +9,9 @@ import Footer from './components/Footer.vue'
 </template>
 
 <script>
+import Navigation from './components/Navigation.vue'
+import Footer from './components/Footer.vue'
+import "firebase/auth";
 export default {
     name: "app",
     components: { Navigation, Footer},
