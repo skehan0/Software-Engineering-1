@@ -138,7 +138,7 @@ export default {
 
     h3 {
       text-align: center;
-      color: #303030;
+      color: red;
       padding-bottom: 10px;
 
       @media (min-width: 900px) {
@@ -212,7 +212,7 @@ export default {
     display: none;
     flex: 2;
     background-size: cover;
-    background-image: url("../assets/background.png");
+    background-image: url("../assets/cocktail.png");
     width: 100%;
     height: 100%;
 
@@ -222,7 +222,7 @@ export default {
   }
       button {
       padding: 0.5rem 1rem;
-      background-color: black;
+      background-color: red;
       color: #fff;
       border: none;
       border-radius: 1rem;
