@@ -29,6 +29,5 @@ export default [
     { path: '/about', component: loadPage('About') },
     { path: '/createMenu', component: loadPage('CreateMenu') },
     { path: '/customer', component: loadPage('Customer') },
-    { path: '/forgotPassword', component: loadPage('ForgotPassword') }
-
+    { path: '/secure', component: loadPage('Secure')}
 ]
