@@ -36,7 +36,6 @@ export default {
       email: null,
       password: null,
       remember: false,
-      location: null,
     };
   },
   methods: {
