@@ -1,27 +1,4 @@
 <template>
-  <!-- <div class="form-wrap">
-    <h1>Register with Spice</h1>
-    <form @submit.prevent="register">
-      <label for="email">Email</label>
-      <input type="email" v-model="email" id="email" required>
-      <label for="password">Password</label>
-      <input type="password" v-model="password" id="password" required>
-      <label for="location">Location</label>
-      <select v-model="location" id="location">
-        <option disabled value="">Please select a location</option>
-        <option v-for="county in counties" :value="county">{{ county }}</option>
-      </select>
-      <div class="remember-me">
-        <label for="agree">
-          <input type="checkbox" v-model="agree" id="agree" required>
-          I agree to the terms and conditions
-        </label>
-      </div>
-      <button @click="register" class="btn btn-primary mt-2">Create Account</button>
-      <router-link class="login" to="/login">Back to Login</router-link>
-    </form>
-    <div class="background"></div>
-  </div> -->
   <div class="form-wrap">
     <form class="register" @submit.prevent="register">
       <h3>Register with Spice</h3>
@@ -153,6 +130,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex: 1;
+    background-color: white;
 
     @media (min-width: 900px) {
       padding: 0 50px;

@@ -81,8 +81,7 @@ export default {
     //if(window.location.hostname === 'localhost') // Checks if working locally
     //connectFunctionsEmulator(functions, "localhost", 5001);
     const secureFunction = httpsCallable(functions, 'securefunction');
-    secureFunction()
-      .then((result) => {
+    secureFunction().then((result) => {
         // Read result of the Cloud Function.
         /** @type {any} */
         console.log(result);

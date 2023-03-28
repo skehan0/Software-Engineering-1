@@ -6,7 +6,7 @@
           <router-link class="header" to="/">Spice</router-link>
           <ul>
             <li>
-              <a href="#"><youTube class="svg-icon"/></a>
+              <a href="#"><youtube class="svg-icon"/></a>
             </li>
             <li>
               <a href="#"><twitter class="svg-icon"/></a>
@@ -37,7 +37,10 @@
 
 
 <script>
-
+import youtube from "../assets/Icons/youtube-brands.svg";
+import twitter from "../assets/Icons/twitter-brands.svg";
+import instagram from "../assets/Icons/instagram-brands.svg";
+import linkedin from "../assets/Icons/linkedin-brands.svg";
 export default {
   name: "Footer",
   components: {

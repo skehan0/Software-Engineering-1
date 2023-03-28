@@ -89,6 +89,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex: 1;
+    background-color: white;
 
     @media (min-width: 900px) {
       padding: 0 50px;

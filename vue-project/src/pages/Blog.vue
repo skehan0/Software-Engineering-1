@@ -40,7 +40,7 @@
 <script>
 import app from '../api/firebase';
 import { getFunctions, httpsCallable, connectFunctionsEmulator } from "firebase/functions";
-import {getAuth, onAuthStateChanged} from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
   data() {
