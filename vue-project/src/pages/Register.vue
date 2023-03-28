@@ -1,148 +1,194 @@
 <template>
-    <div class="form-wrap">
-      <h1>Register with Spice</h1>
-      <form @submit.prevent="register">
-        <label for="username">Username</label>
-        <input type="text" v-model="username" id="username" required>
-        <label for="email">Email</label>
-        <input type="email" v-model="email" id="email" required>
-        <label for="password">Password</label>
-        <input type="password" v-model="password" id="password" required>
-        <label for="location">Location</label>
-        <select v-model="location" id="location">
-          <option disabled value="">Please select a location</option>
-          <option v-for="county in counties" :value="county">{{ county }}</option>
-        </select>
-        <div class="remember-me">
-          <label for="agree">
-            <input type="checkbox" v-model="agree" id="agree" required>
-            I agree to the terms and conditions
-          </label>
-        </div>
-        <button @click="register" class="btn btn-primary mt-2">Create Account</button>
-        <!-- <button type="submit" onclick="submit()">Sign Up</button>
-        -->
-        
-          <a class="login" href="Login">Back to Login</a>
-      </form>
-      <div class="background"></div>
-    </div>
-  </template>
-  
-  <script>
-  import app from '../api/firebase'
-  import {getAuth, createUserWithEmailAndPassword} from  "firebase/auth"
-  export default {
-    name: "Register",
-    data() {
-      return {
-        username: '',
-        email: '',
-        password: '',
-        agree: false,
-        location: '',
-        counties: [
-          'Antrim', 'Armagh', 'Carlow', 'Cavan', 'Clare', 'Cork', 'Derry', 'Donegal',
-          'Down', 'Dublin', 'Fermanagh', 'Galway', 'Kerry', 'Kildare', 'Kilkenny',
-          'Laois', 'Leitrim', 'Limerick', 'Longford', 'Louth', 'Mayo', 'Meath',
-          'Monaghan', 'Offaly', 'Roscommon', 'Sligo', 'Tipperary', 'Tyrone', 'Waterford',
-          'Westmeath', 'Wexford', 'Wicklow'
-        ]
-      };
-    },
+  <div class="form-wrap">
+    <h1>Register with Spice</h1>
+    <form @submit.prevent="register">
+      <label for="username">Username</label>
+      <input type="text" v-model="username" id="username" required>
+      <label for="email">Email</label>
+      <input type="email" v-model="email" id="email" required>
+      <label for="password">Password</label>
+      <input type="password" v-model="password" id="password" required>
+      <label for="location">Location</label>
+      <select v-model="location" id="location">
+        <option disabled value="">Please select a location</option>
+        <option v-for="county in counties" :value="county">{{ county }}</option>
+      </select>
+      <div class="remember-me">
+        <label for="agree">
+          <input type="checkbox" v-model="agree" id="agree" required>
+          I agree to the terms and conditions
+        </label>
+      </div>
+      <button @click="register" class="btn btn-primary mt-2">Create Account</button>
+      <a class="login" href="Login">Back to Login</a>
+    </form>
+    <div class="background"></div>
+  </div>
+</template>
 
-    methods: {
+<script>
+import app from '../api/firebase'
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+
+export default {
+  name: "Register",
+  data() {
+    return {
+      username: "",
+      email: "",
+      password: "",
+      agree: false,
+      location: "",
+      counties: [
+        "Antrim",
+        "Armagh",
+        "Carlow",
+        "Cavan",
+        "Clare",
+        "Cork",
+        "Derry",
+        "Donegal",
+        "Down",
+        "Dublin",
+        "Fermanagh",
+        "Galway",
+        "Kerry",
+        "Kildare",
+        "Kilkenny",
+        "Laois",
+        "Leitrim",
+        "Limerick",
+        "Longford",
+        "Louth",
+        "Mayo",
+        "Meath",
+        "Monaghan",
+        "Offaly",
+        "Roscommon",
+        "Sligo",
+        "Tipperary",
+        "Tyrone",
+        "Waterford",
+        "Westmeath",
+        "Wexford",
+        "Wicklow",
+      ],
+    }
+  },
+
+  methods: {
     register() {
-      console.log("Email " + this.email);
-      console.log("Password" + this.password);
-      const auth = getAuth(app);
+      console.log("Email " + this.email)
+      console.log("Password" + this.password)
+      const auth = getAuth(app)
       createUserWithEmailAndPassword(auth, this.email, this.password)
-          .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            console.log(user)
-            this.$router.push({path: '/secure'})
-            // ...
-          }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode)
-        console.log(errorMessage)
-        // ..
-      });
-    }
-  }
-    }
-
-  </script>
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user
+          console.log(user)
+          this.$router.push({ path: "/secure" })
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code
+          const errorMessage = error.message
+          console.log(errorCode)
+          console.log(errorMessage)
+          // ..
+        })
+    },
+  },
+}
+</script>
   
   <style scoped>
-  .form-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 200vh;
-    color:black;
-    margin-top: 50px;
-    position: relative;
-    height: auto;
-    padding-top: 60px;
-    
-  }
-  
-  h1 {
-    margin-bottom: 2rem;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20rem;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  input,
-  select {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border-radius: 0.25rem;
-    border: none;
-    box-shadow: 0 0.125rem 0.25rem rgba(221, 19, 19, 0.1);
-  }
-  
-  .remember-me {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  button {
-    padding: 0.5rem 1rem;
-    background-color: #0076f5;
-    color: black;
-    border: none;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(216, 10, 10, 0.1);
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    color: white;
-  }
-  
-  button:hover {
-    background-color: #41cc00;
-  }
+.form-wrap {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black;
+  margin: 90px auto 0;
+  text-align: center;
+  max-width: 1000px;
+}
 
-  
-  
-  </style>
-  
+h1 {
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25rem; /* increased width */
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* added box shadow */
+
+  /* added margin to adjust form position */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(221, 19, 19, 0.1);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #0076f5;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #41cc00;
+}
+
+/* added styles for the Login link */
+a.login {
+  margin-top: 1rem;
+  display: inline-block;
+  color: #0076f5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease-in-out;
+}
+
+a.login:hover {
+  color: #41cc00;
+}
+
+/* added styles for the background */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
+}
+</style>
