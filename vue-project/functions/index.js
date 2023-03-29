@@ -1,6 +1,10 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
-const cors = require('cors')({origin:true});
+const cors = require('cors');
+app.use(cors({
+    origin: "*",
+}))
+
 admin.initializeApp();
 
 // // Create and Deploy Your First Cloud Functions
@@ -82,7 +86,7 @@ exports.updatecomment = functions.https.onRequest((request, response) => {
 });
 
 exports.securefunction = functions.https.onCall((data, context) => {
-
+    cors(request, response, () => {
     // context.auth contains information about the user, if they are logged in etc.
     if(typeof context.auth === undefined)
     {
@@ -93,11 +97,11 @@ exports.securefunction = functions.https.onCall((data, context) => {
     {
         return "User is logged in"
     }
-
+    })
 });
 
 exports.postusercomment = functions.https.onCall((data, context) => {
-
+    cors(request, response, () => {
     // context.auth contains information about the user, if they are logged in etc.
     const currentTime = admin.firestore.Timestamp.now();
     data.timestamp = currentTime;
@@ -116,11 +120,11 @@ exports.postusercomment = functions.https.onCall((data, context) => {
             return "Data saved in Firestore"
         });
     }
-
+    })
 });
 
 exports.deleteusercomment = functions.https.onCall((data, context) => {
-
+    cors(request, response, () => {
     if(typeof context.auth === 'undefined')
     {
        // request is made from an anonymous user
@@ -144,4 +148,5 @@ exports.deleteusercomment = functions.https.onCall((data, context) => {
             }
         });
     }
+})
 });
