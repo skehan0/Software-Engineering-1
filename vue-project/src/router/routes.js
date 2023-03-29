@@ -23,7 +23,7 @@ function loadPage (component) {
 }
 export default [
     { path: '/', component: loadPage('Home') },
-    { path: '/blog', component: loadPage('Blog') },
+    { path: '/CreateOrder', component: loadPage('CreateOrder') },
     { path: '/register', component: loadPage('Register') },
     { path: '/login', component: loadPage('Login') },
     { path: '/about', component: loadPage('About') },

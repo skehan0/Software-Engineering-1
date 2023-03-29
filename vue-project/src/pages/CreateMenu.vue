@@ -66,7 +66,7 @@ body {
 
 h1 {
   margin-top: 0;
-  color: orange;
+  color: red;
   font-size: 2rem;
 }
 
@@ -91,15 +91,15 @@ input {
 }
 
 .add-button {
-  background-color: orange;
+  background-color: red;
 }
 
 .delete-button {
-  background-color: orange;
+  background-color: red;
 }
 
 .submit-button {
-  background-color: orange;
+  background-color: red;
 }
 
 button {

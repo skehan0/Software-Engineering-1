@@ -16,17 +16,17 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto">
             <li v-if="!isLoggedIn" class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded"
-                to="/register">Register</router-link></li>
+                to="/register">Restaurant Register</router-link></li>
             <li v-if="!isLoggedIn" class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded"
-                to="/login">Login</router-link></li>
+                to="/login">Restaurant Login</router-link></li>
             <li v-if="!isLoggedIn" class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded"
                 to="/about">About</router-link></li>
             <li v-if="isLoggedIn" class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded"
                 to="/secure">Secure</router-link></li>
             <li v-if="isLoggedIn" class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded"
                 to="/CreateMenu">CreateMenu</router-link></li>
-            <li v-if="isLoggedIn" class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded"
-                to="/blog">Blog</router-link></li>
+            <li v-if="!isLoggedIn" class="nav-item mx-0 mx-lg-1"><router-link class="nav-link py-3 px-0 px-lg-3 rounded"
+                to="/CreateOrder">Create Order</router-link></li>
             <li v-if="isLoggedIn" class="nav-item mx-0 mx-lg-1"><router-link @click="logout"
                 class="nav-link py-3 px-0 px-lg-3 rounded" to="/">Logout</router-link></li>
           </ul>
