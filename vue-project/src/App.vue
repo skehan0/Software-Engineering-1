@@ -11,13 +11,13 @@
 <script>
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
-import "firebase/auth";
+import { getAuth } from 'firebase/auth';
 export default {
     name: "app",
     components: { Navigation, Footer},
     data(){
         return {
-            navigation: null,
+            navigation: true,
         };
     },
     created() {
@@ -54,6 +54,9 @@ export default {
     font-family: "Quicksand", sans-serif;
 }
 
+body {
+    background-image: url("../assets/background.png")
+}
 .app{
     display: flex;
     flex-direction: column;

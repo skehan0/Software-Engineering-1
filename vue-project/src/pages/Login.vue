@@ -16,9 +16,10 @@
           Remember me
         </label>
       </div>
+      <p class="error" v-if="login.errorMessage">Error: Wrong username or password</p>
       <button type="submit" @click="login">Login</button>
       <p class="login-register">
-      <router-link class="register" to="/register">Don't have an account? Register</router-link>
+      Don't have an account?<router-link class="register" to="/register"> Register</router-link>
       </p>
       <div class="angle"></div>
     </form>
@@ -98,7 +99,7 @@ export default {
     h3 {
       text-align: center;
       color: red;
-      padding-bottom: 10px;
+      padding-bottom: 20;
 
       @media (min-width: 900px) {
         font-size: 40px;
@@ -136,6 +137,14 @@ export default {
           left: 6px;
         }
       }
+    }
+
+    .remember-me {
+      margin-bottom: 25px;
+    }
+
+    .error {
+      color: red;
     }
 
     .forgot-password {

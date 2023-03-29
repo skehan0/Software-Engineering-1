@@ -18,7 +18,7 @@
       </div>
       <button type="submit" @click="register">Register</button>
       <p class="register-login">
-      <router-link class="login" to="/login">Already have an account? Login</router-link>
+      Already have an account? <router-link class="login" to="/login">Login</router-link>
       </p>
       <div class="angle"></div>
     </form>
@@ -139,7 +139,7 @@ export default {
     h3 {
       text-align: center;
       color: red;
-      padding-bottom: 10px;
+      padding-bottom: 20px;
 
       @media (min-width: 900px) {
         font-size: 40px;
@@ -229,6 +229,7 @@ export default {
       box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
       cursor: pointer;
       transition: background-color 0.2s ease-in-out;
+      margin-bottom: 15px;
 
       &:hover {
         background-color: #0062cc;

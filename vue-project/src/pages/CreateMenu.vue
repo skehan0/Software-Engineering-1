@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .menu-container {
   max-width: 600px;
   margin: 0 auto;
@@ -59,7 +59,7 @@ export default {
 }
 
 body {
-  background-image: url('../assets/background.png');
+  background-image: url('../assets/flame.png');
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -1,7 +1,7 @@
 <template>
-  <h1>Welcome to my new Blog page</h1>
-  <p>This is my very first blog entry</p>
   <div class="container mt-5">
+    <h1>Welcome to my new Blog page</h1>
+    <p>This is my very first blog entry</p>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Email address</label>
       <input type="email" class="form-control" v-model="handle" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -73,11 +73,11 @@ export default {
   },
   methods : {
     postComment() {
-      let loader = this.$loading.show({    // Optional parameters
-        loader: 'dots',
-        container: this.$refs.container,
-        canCancel: false
-      });
+      // let loader = this.$loading.show({    // Optional parameters
+      //   loader: 'dots',
+      //   container: this.$refs.container,
+      //   canCancel: false
+      // });
       const functions = getFunctions(app);
       // Uncomment this code if your local emulators are running and you wish to test locally
       //if(window.location.hostname === 'localhost') // Checks if working locally
@@ -91,11 +91,11 @@ export default {
       });
     },
     getComments() {
-      let loader = this.$loading.show({    // Optional parameters
-        loader: 'dots',
-        container: this.$refs.container,
-        canCancel: false
-      });
+      // let loader = this.$loading.show({    // Optional parameters
+      //   loader: 'dots',
+      //   container: this.$refs.container,
+      //   canCancel: false
+      // });
       const functions = getFunctions(app);
       // Uncomment this section if your local emulators are running and you wish to test locally
       //if(window.location.hostname === 'localhost') // Checks if working locally
@@ -146,6 +146,9 @@ export default {
 }
 </script>
 <style scoped>
+.container {
+  padding-top: 60px;
+}
 .right{
   text-align: right;
 }
