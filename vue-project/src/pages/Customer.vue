@@ -15,32 +15,32 @@
 
 
         <div class="home-category">
-            <router-link @click="scrollToTop()" to="/menu" class="box">
+            <router-link @click="scrollToTop()" to="/createmenu" class="box">
                 <img src="../assets/background.png" alt="">
                 <h3>Sult</h3>
             </router-link>
 
-            <router-link @click="scrollToTop()" to="/menu" class="box">
+            <router-link @click="scrollToTop()" to="/createmenu" class="box">
                 <img src="../assets/background.png" alt="">
                 <h3>Back Door</h3>
             </router-link>
 
-            <router-link @click="scrollToTop()" to="/menu" class="box">
+            <router-link @click="scrollToTop()" to="/createmenu" class="box">
                 <img src="../assets/background.png" alt="">
                 <h3>Huskers</h3>
             </router-link>
 
-            <router-link @click="scrollToTop()" to="/menu" class="box">
+            <router-link @click="scrollToTop()" to="/createmenu" class="box">
                 <img src="../assets/background.png" alt="">
                 <h3>XIX</h3>
             </router-link>
 
-            <router-link @click="scrollToTop()" to="/menu" class="box">
+            <router-link @click="scrollToTop()" to="/createmenu" class="box">
                 <img src="../assets/background.png" alt="">
                 <h3>Zion</h3>
             </router-link>
 
-            <router-link @click="scrollToTop()" to="/menu" class="box">
+            <router-link @click="scrollToTop()" to="/createmenu" class="box">
                 <img src="../assets/background.png" alt="">
                 <h3>8</h3>
             </router-link>

@@ -1,5 +1,23 @@
 <template>
   <div class="container mt-5">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" v-model="handle" id="exampleFormControlInput1"
+        placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+      <textarea class="form-control" v-model="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="mb-3 right">
+      <button type="button" @click="postComment" class="btn btn-primary">Post Comment</button>
+    </div>
+    <div class="mb-3 right">
+      <button type="button" @click="getComments" class="btn btn-primary">Show Comments</button>
+    </div>
+    </div>
+
+  <!-- <div class="container mt-5">
     <h1>Welcome to my new Blog page</h1>
     <p>This is my very first blog entry</p>
     <div class="mb-3">
@@ -16,7 +34,7 @@
     <div class="mb-3 right">
       <button type="button" @click="getComments" class="btn btn-primary">Show Comments</button>
     </div>
-    <!-- Checks to make sure there are actual comments to display -->
+    
     <div v-if="commentsArray.length > 0">
       <ul>
       <li v-for="comment in commentsArray">
@@ -35,12 +53,12 @@
       </li>
       </ul>
     </div>
-  </div>
+  </div>  -->
 </template>
 <script>
 import app from '../api/firebase';
 import { getFunctions, httpsCallable, connectFunctionsEmulator } from "firebase/functions";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
 
 export default {
   data() {
@@ -145,6 +163,11 @@ export default {
   }
 }
 </script>
+
+
+
+
+
 <style scoped>
 .container {
   padding-top: 60px;

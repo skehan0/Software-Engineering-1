@@ -53,10 +53,6 @@ export default {
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
 }
-
-body {
-    background-image: url("../assets/background.png")
-}
 .app{
     display: flex;
     flex-direction: column;

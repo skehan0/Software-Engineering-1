@@ -4,8 +4,6 @@
       <div class="left">
         <div class="row-1">
           <router-link class="header" to="/">Spice</router-link>
-        </div>
-        <div class="row-1">
           <router-link class="header" to="/"><img src="../assets/LogoSpice.png" alt="Image Description" class="ml-2"></router-link>
         </div>
         <div class="row-2">
@@ -33,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 footer {
   margin-top: auto;
-  padding: 100px 25px;
+  padding: 20px 25px;
   background-color: #303030;
   .container {
     display: flex;
@@ -64,7 +62,6 @@ footer {
         text-align: center;
         font-size: 24px;
         color: #fff;
-        margin-bottom: 16px;
         text-decoration: none;
         font-weight: 600;
         @media (min-width: 800px) {
@@ -78,7 +75,7 @@ footer {
       }
 
       .row-1 {
-        flex-direction: column;
+
 
         h2 {
           text-align: center;
@@ -102,13 +99,11 @@ footer {
       color: #fff;
       align-items: center;
       flex-direction: column;
+      margin-top: auto;
       @media (min-width: 800px) {
         align-items: flex-end;
         gap: 0;
       }
-    }
-    p {
-      margin-top: auto;
     }
   }
 }
