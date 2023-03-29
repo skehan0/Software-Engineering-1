@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 
 import { getAnalytics } from "firebase/analytics";
-
+import { getFunctions } from "firebase/functions";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
@@ -20,6 +20,8 @@ const firebaseConfig = {
     apiKey: "AIzaSyBTK6T35hGBKAecGVofU_FkKNjfH_m6vF0",
 
     authDomain: "skehan1-7bc87.firebaseapp.com",
+
+    databaseURL: "https://skehan1-7bc87-default-rtdb.europe-west1.firebasedatabase.app/",
 
     projectId: "skehan1-7bc87",
 
@@ -41,6 +43,8 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 const db = getFirestore(app);
+
+const functions = getFunctions(app);
 
 
 export default app;
