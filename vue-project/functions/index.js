@@ -1,21 +1,8 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
-const cors = require('cors')({origin: '*'});
+const cors = require('cors')({ origin: true });
+
 admin.initializeApp();
-
-const express = require('express');
-const app = express();
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://skehan1-7bc87-default-rtdb.europe-west1.firebasedatabase.app/');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-  });
-
-  app.listen(3000, () => {
-    console.log('Server started on port 3000');
-  });
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions

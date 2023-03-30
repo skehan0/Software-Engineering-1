@@ -11,10 +11,10 @@
       <textarea class="form-control" v-model="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
     <div class="mb-3 right">
-      <button type="submit" @click="postComment()" class="btn btn-primary">Post Order</button>
+      <button type="submit" @click="postComment" class="btn btn-primary">Post Order</button>
     </div>
     <div class="mb-3 right">
-      <button type="button" @click="getComments()" class="btn btn-primary">Show Order</button>
+      <button type="button" @click="getComments" class="btn btn-primary">Show Order</button>
     </div>
     </div>
 </template>
