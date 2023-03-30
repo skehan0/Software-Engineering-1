@@ -15,13 +15,12 @@
         <span>why choose us?</span>
         <h3 class="title">what's make our app so good?</h3>
         <p>
-          Customers value the very best from their drinks. The purpose of the app is to help more pubs and restaurants
-          adapt to modern technology by solving many problems such as ordering at the bar when taking kids to a pub, not
-          losing a table. Avoid navigating through a crowded pub carrying a sizable round of drinks on a tray. The app also
+          Customers value the very best from their drinks. The purpose of Spice is to help more pubs and restaurants
+          adapt to modern technology by solving many problems such as avoiding congestion at bars, with our app,
+          you can avoid navigating through a crowded pub carrying a sizable round of drinks on a tray. The app also
           be an excellent tool for those who are less mobile or seated far from the bar, such beer gardens or on an upper
           floor.
         </p>
-        <router-link @click="scrollToTop()" to="/about" class="btn">read more</router-link>
         <div class="icons-container">
           <div class="icons">
             <h3>fast technology</h3>
@@ -30,12 +29,10 @@
             <h3>fresh drinks</h3>
           </div>
           <div class="icons">
-            <h3>digital transformation</h3>
-          </div>
-          <div class="icons">
             <h3>24/7 support</h3>
           </div>
         </div>
+        <router-link @click="scrollToTop()" to="/about" class="btn">read more</router-link>
       </div>
     </div>
 </div>
@@ -70,12 +67,16 @@
   line-height: 2.5rem;
 }
 
+.text-warning {
+  color: #27ae60;
+}
+
 .home-about {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background: #f7f7f7;
+  background-color: white;
   padding: 5% 0;
 }
 
@@ -106,13 +107,6 @@
   font-size: 1.6rem;
   color: black;
   margin-bottom: 2rem;
-}
-
-.home-about .row-2 .icons-container {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
 }
 
 .home-about .row-2 .icons-container .icons {
