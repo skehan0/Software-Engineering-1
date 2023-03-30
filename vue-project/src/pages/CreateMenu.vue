@@ -7,7 +7,7 @@
     <div class="button-container">
       <button class="add-button" @click="addInput">Add Item</button>
       <button class="delete-button" @click="deleteInput">Delete Item</button>
-      <button class="submit-button" type="submit" @click="submit">Submit Menu</button>
+      <button class="submit-button" type="submit" @click="submit()">Submit Menu</button>
     </div>
   </div>
 </template>
@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .menu-container {
   max-width: 600px;
   margin: 0 auto;
@@ -59,14 +59,14 @@ export default {
 }
 
 body {
-  background-image: url('../assets/flame.png');
+  background-image: url('../assets/background.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 h1 {
   margin-top: 0;
-  color: red;
+  color: orange;
   font-size: 2rem;
 }
 
@@ -91,15 +91,15 @@ input {
 }
 
 .add-button {
-  background-color: red;
+  background-color: orange;
 }
 
 .delete-button {
-  background-color: red;
+  background-color: orange;
 }
 
 .submit-button {
-  background-color: red;
+  background-color: orange;
 }
 
 button {

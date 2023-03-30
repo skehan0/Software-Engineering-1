@@ -1,65 +1,27 @@
 <template>
   <div class="container mt-5">
+    <h1>Create Your Order</h1>
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <label for="exampleFormControlInput1" class="form-label">Table Number</label>
       <input type="email" class="form-control" v-model="handle" id="exampleFormControlInput1"
         placeholder="name@example.com">
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+      <label for="exampleFormControlTextarea1" class="form-label">Order</label>
       <textarea class="form-control" v-model="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
     <div class="mb-3 right">
-      <button type="button" @click="postComment" class="btn btn-primary">Post Comment</button>
+      <button type="submit" @click="postComment()" class="btn btn-primary">Post Order</button>
     </div>
     <div class="mb-3 right">
-      <button type="button" @click="getComments" class="btn btn-primary">Show Comments</button>
+      <button type="button" @click="getComments()" class="btn btn-primary">Show Order</button>
     </div>
     </div>
-
-  <!-- <div class="container mt-5">
-    <h1>Welcome to my new Blog page</h1>
-    <p>This is my very first blog entry</p>
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Email address</label>
-      <input type="email" class="form-control" v-model="handle" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-      <textarea class="form-control" v-model="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-    <div class="mb-3 right">
-      <button type="button" @click="postComment" class="btn btn-primary">Post Comment</button>
-    </div>
-    <div class="mb-3 right">
-      <button type="button" @click="getComments" class="btn btn-primary">Show Comments</button>
-    </div>
-    
-    <div v-if="commentsArray.length > 0">
-      <ul>
-      <li v-for="comment in commentsArray">
-        <div v-if="!editing">
-          <span @click="enableEditing(comment.data.comment)">
-            {{comment.data.comment}}</span>
-        </div>
-        <div v-if="editing">
-          <input v-model="tempValue" class="input"/>
-          <button @click="disableEditing"> Cancel </button>
-          <button @click="save(comment.id)"> Save </button>
-        </div>
-        <div v-if="this.user">
-           <button type="button" v-if="comment.data.uid == this.user.uid" @click="deleteComment(comment.id)" class="btn btn-primary">Delete Comment</button>
-        </div>
-      </li>
-      </ul>
-    </div>
-  </div>  -->
 </template>
-<script>
-import app from '../api/firebase';
-import { getFunctions, httpsCallable, connectFunctionsEmulator } from "firebase/functions";
-import {getAuth, onAuthStateChanged} from "firebase/auth";
 
+<script>
+import { getFunctions, httpsCallable } from "firebase/functions";
+import app from '../api/firebase';
 export default {
   data() {
     return {
@@ -68,27 +30,9 @@ export default {
       commentsArray:[],
       editing:false,
       tempValue:null,
-      user:null
     }
   },
-  created(){
-    // Check for logged in user
-    const auth = getAuth(app);
-    onAuthStateChanged(auth, (user) => {
-
-      if (user) {
-        console.log("User", user);
-        this.user = user;
-        this.handle = user.email;
-        // User is signed in
-      } else {
-        console.log("No user found")
-        // User is not signed in
-      }
-    });
-    this.getComments();
-    //window.setInterval(this.getComments, 1000);
-  },
+  created() {},
   methods : {
     postComment() {
       // let loader = this.$loading.show({    // Optional parameters
@@ -109,15 +53,13 @@ export default {
       });
     },
     getComments() {
-      // let loader = this.$loading.show({    // Optional parameters
-      //   loader: 'dots',
-      //   container: this.$refs.container,
-      //   canCancel: false
-      // });
+      //  let loader = this.$loading.show({    // Optional parameters
+      //    loader: 'dots',
+      //    container: this.$refs.container,
+      //    canCancel: false
+      //  });
       const functions = getFunctions(app);
-      // Uncomment this section if your local emulators are running and you wish to test locally
-      //if(window.location.hostname === 'localhost') // Checks if working locally
-      //connectFunctionsEmulator(functions, "localhost", 5001);
+      
       const getComments = httpsCallable(functions, 'getcomments');
       getComments().then((result) => {
         // Read result of the Cloud Function.
@@ -129,9 +71,6 @@ export default {
     },
     deleteComment(id){
       const functions = getFunctions(app);
-      // Uncomment this section if your local emulators are running and you wish to test locally
-      //if(window.location.hostname === 'localhost') // Checks if working locally
-      //connectFunctionsEmulator(functions, "localhost", 5001);
       const deleteComment = httpsCallable(functions, 'deleteusercomment');
       deleteComment({id:id}).then((result) => {
         console.log(result.data);
@@ -163,9 +102,6 @@ export default {
   }
 }
 </script>
-
-
-
 
 
 <style scoped>
