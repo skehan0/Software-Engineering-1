@@ -109,6 +109,7 @@ export default {
   align-self: center;
   margin: 0 auto;
   width: 90%;
+  margin-top: 25px;
 
   @media (min-width: 900px) {
     width: 100%;

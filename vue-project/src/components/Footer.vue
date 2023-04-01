@@ -8,10 +8,9 @@
         </div>
         <div class="row-2">
           <ul>
-            <router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/home">Home</router-link>
-            <router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/blog">Blogs</router-link>
-            <router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/about">About</router-link>
-            <router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/login">Login In / Register</router-link>
+            <li><router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/">Home</router-link></li>
+            <li><router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/createorder">Create Order</router-link></li>
+            <li><router-link class="nav-link py-3 px-0 px-lg-3 rounded" to="/about">About</router-link></li>
           </ul>
         </div>
       </div>
@@ -31,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 footer {
   margin-top: auto;
-  padding: 20px 25px;
+  padding: 50px 25px;
   background-color: #303030;
   .container {
     display: flex;
@@ -75,8 +74,6 @@ footer {
       }
 
       .row-1 {
-
-
         h2 {
           text-align: center;
           @media (min-width: 800px) {

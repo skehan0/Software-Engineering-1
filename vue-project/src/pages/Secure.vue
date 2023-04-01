@@ -92,7 +92,5 @@ export default {
 </script>
   
 <style scoped>
-body {
-  background-image: url("../assets/flame.png")
-}
+
 </style>

@@ -58,11 +58,7 @@ export default {
   background-color: white;
 }
 
-body {
-  background-image: url('../assets/background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 
 h1 {
   margin-top: 0;

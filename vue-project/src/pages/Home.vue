@@ -16,8 +16,8 @@
         <h3 class="title">what's make our app so good?</h3>
         <p>
           Customers value the very best from their drinks. The purpose of Spice is to help more pubs and restaurants
-          adapt to modern technology by solving many problems such as avoiding congestion at bars, with our app,
-          you can avoid navigating through a crowded pub carrying a sizable round of drinks on a tray. The app also
+          adapt to modern technology by solving many problems such as avoiding congestion at bars. With our app,
+          you can avoid navigating through a crowded pub carrying a sizable round of drinks on a tray. The app can also
           be an excellent tool for those who are less mobile or seated far from the bar, such beer gardens or on an upper
           floor.
         </p>
